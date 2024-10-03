@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+		//	取得網址裡的參數
+		fuction GetUrlVar(VarName)
+		{
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var regexS = "[\\?&]"+VarName + "=([^&#]*)";
+		var regex = new RegExp(regexS);
+		var results = regex.exec(windows.location.href);
+		if (results == null)
+			return "";
+		else 
+			return results[1];
+		}
+</script>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div id="demo">
+</div>
+
+<div id="text">
+</div>
+
+<script>
+        photo = []
+        photo_2 = []
+		text  = []
+		//video = []
+     
+
+  function processSheetsData(response) {
+  var data = response.getDataTable();
+  var columns = data.getNumberOfColumns();
+  var rows = data.getNumberOfRows();
+           
+  for (var r=0 ; r<rows ; r++) {
+   photo[r] = data.getFormattedValue(r,0);
+  
+   <!--saddr[r] = data.getFormattedValue(r,2);-->
+            <!--daddr[r] = data.getFormattedValue(r,3); -->
+   photo_2[r] = data.getFormattedValue(r,1);
+   text[r] = data.getFormattedValue(r,2);
+   //video[r] = data.getFormattedValue(r,3);
+        }
+  
+
+    // 要先取得網址裡的參數 
+    var X = decodeURIComponent(GetUrlVar('id'));
+    var i = Number(X);
+          <!--var map_1= '<br /><br /><iframe src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+daddr[i]+'&z=16&t=p&output=embed"></iframe>';-->
+          <!--var map_2 = '<a href="https://maps.google.com.tw/maps?saddr=' +saddr[i]+'&daddr='+daddr[i]+'"target="_blank">路線導航</a>';-->
+    document.getElementById("demo").innerHTML = "<img src='" + photo[i] + "'width='50%'>" + "<img src='" + photo_2[i] + "'width='50%'>" ;
+    document.getElementById("text").innerHTML = text[i];
+	//document.getElementById("video").innerHTML = vieo[i];
+         
+          }
+         
+  </script>
+
+
+
+
+
+
+
+
+
+</html> 

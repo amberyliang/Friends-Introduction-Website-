@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Friends角色介紹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS  -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+		<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+	
+	<!-- 利用Google Visualization讀取Google Sheet https://www.labnol.org/code/google-sheet-d3js-visualization-200608 -->
+        <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+	<script>
+
+      // https://developers.google.com/chart/interactive/docs/quick_start
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded. 
+      google.charts.setOnLoadCallback(init);
+
+      function init() {
+        // 這個例子使用的試算表是 https://docs.google.com/spreadsheets/d/1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk/copy
+        // 將上述試算表另存副本後，你要在自己的雲端硬碟將該試算表設定成[知道連結的使用者都能查看]。
+        // 然後讓程式讀取 https://docs.google.com/spreadsheets/d/瀏覽器網址列上的網址擷取序號部分/gviz/tq?sheet=工作表名稱
+        // 也就是將下列的 1QScI5d56Kh-LGywY4WR6EvRGPcalFQYUAdqMxbFVDvk 更換成自己的檔案序號，以及最後部分指讀取哪個工作表。
+        var url =
+          'https://docs.google.com/spreadsheets/d/1nbriciLd1rg4f41wxdLYJUbdyXkV7f917k8Fym_WeNw/gviz/tq?sheet=角色資料';
+        var query = new google.visualization.Query(url);
+        query.setQuery('select *');
+        query.send(processSheetsData);
+      } 
+
+
+
+      </script>
+	  
+	  <script>
+        photo = []
+        photo_2 = []
+	    text  = []
+        //video=[]
+
+  function processSheetsData(response) {
+  var data = response.getDataTable();
+  var columns = data.getNumberOfColumns();
+  var rows = data.getNumberOfRows();
+           
+  for (var r=0 ; r<rows ; r++) {
+   photo[r] = data.getFormattedValue(r,0);
+   photo_2[r] = data.getFormattedValue(r,1);
+   <!--saddr[r] = data.getFormattedValue(r,2);-->
+   <!--daddr[r] = data.getFormattedValue(r,3); -->
+   text[r] = data.getFormattedValue(r,2);
+   //video[r] = data.getFormattedValue(r,3);
+        }
+  
+
+    // 要先取得網址裡的參數 
+    var X = decodeURIComponent(GetUrlVar('id'));
+    var i = Number(X);
+          <!--var map_1= '<br /><br /><iframe src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q='+daddr[i]+'&z=16&t=p&output=embed"></iframe>';-->
+          <!--var map_2 = '<a href="https://maps.google.com.tw/maps?saddr=' +saddr[i]+'&daddr='+daddr[i]+'"target="_blank">路線導航</a>';-->
+          document.getElementById("demo").innerHTML = "<img src='" + photo[i] + "'width='50%'>" + "<img src='" + photo_2[i] + "'width='50%'>" ;
+          document.getElementById("text").innerHTML = text[i];
+		  
+          <!--document.getElementById("map_1").innerHTML = map_1;-->
+          <!--document.getElementById("map_2").innerHTML = map_2;-->
+          }
+		  
+		  
+		var text = "";
+        for (d=e=f=0;
+             d < photos.length, e<title.length , f<link.length ;
+             d++ ,e++ ,f++ )
+           
+       {
+		text = text + '<div class="col s12 m4 l2">';
+		text = text + ' <div class="card">';
+		text = text + '  <div class="card-image">';
+		text = text + '    <img src="' + photos[i] + '">';
+        text = text + '     <span class="card-title"> "'+title[a]+'"</span>';
+        text = text + '  </div>';
+        text = text + '  <div class="card-content">';
+        text = text + '    </div>';
+        text = text + '    <div class="card-action">';
+        text = text + '     <a href="child_page.html?id='+i+'" target=_blank>click to learn more!</a>';
+        text = text + '    </div>';
+        text = text + '   </div>';
+        text = text + '  </div>';
+        text = text + ' </div>';
+        text = text + '</div>';  
+      
+        }
+
+        document.getElementById("demo").innerHTML = text;
+
+         
+  </script>
+
+	
+	
+	
+	<script type="text/javascript">
+		//	取得網址裡的參數
+		fuction GetUrlVar(VarName)
+		{
+		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+		var regexS = "[\\?&]"+VarName + "=([^&#]*)";
+		var regex = new RegExp(regexS);
+		var results = regex.exec(windows.location.href);
+		if (results == null)
+			return "";
+		else 
+			return results[1];
+		}
+	</script>
+      
+	<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+	    </script>
+   
+	</head>
+
+    <body>
+	
+	 
+	
+	<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center deep-purple-text text-lighten-3">Friends角色介紹</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">27年以來的影史經典</h5>
+        </div>
+		
+
+        <div class="row center">
+          <a href="comment.html" id="download-button" class="btn-large waves-effect waves-light teal amber accent-2">票選你喜歡的角色吧</a>
+          <a href="invest(4).html" id="download-button" class="btn-large waves-effect waves-light teal amber accent-2">看看大家的票選對象</a>
+        </div> <br><br><br> <br><br><br><br>
+      
+        <br><br>
+
+      </div>
+    </div>
+	
+	
+	<!-- parallax-->
+	
+    <div class="parallax"><img src="friends6.jpg" alt="Unsplashed background img 1"></div>
+    </div> <br><br><br> <br>
+     
+	 
+	
+	 <br><br>
+    <h1 class="header center ">主要角色介紹</h1><br>
+    <div class="row" id="demo"> </div> 
+	
+      
+<script>
+        photos = ["picture/cover/cover_rachel.jpg", 
+                 "picture/cover/cover_phoebe.jpg", 
+                 "picture/cover/cover_monica.jpg", 
+                 "picture/cover/cover_joey.jpg", 
+                 "picture/cover/cover_chandler.jpg", 
+                "picture/cover/cover_ross.jpg"
+				];
+		//要先取得網址裡的參數
+		var x = decodeURIComponent(GetUrlVar('id'));
+		var i = Number(x);
+		document.getElementById("demo").innerHTML = "<img src ='" + photos[i] + "'width='100%'>";
+</script>
+
+      
+
+<script>
+		
+        title = ['Rachel Green','Phoebe Buffay','Monica  Geller','Joey Tribbiani','Chandler Bing','Ross Geller','Emma Geller-Green','Ben Geller','Carol Willick',
+'Richard Burke','Emily Waltham','Gunther'];
+
+     
+		
+		link = ["pages/rachel.html",
+				"pages/phoebe.html",
+				"pages/monica.html",
+				"pages/joey.html",
+				"pages/chandler.html",
+				"pages/ross.html",
+			];
+
+        var text = "";
+        for (i=a=c=0;
+             i < photos.length, a<title.length , c<link.length ;
+             i++ ,a++ ,c++ )
+           
+        {
+          text = text + '<div class="col s12 m4 l2">';
+          text = text + ' <div class="card">';
+          text = text + '  <div class="card-image">';
+          text = text + '    <img src="' + photos[i] + '">';
+          text = text + '     <span class="card-title"> "'+title[a]+'"</span>';
+          text = text + '  </div>';
+          text = text + '  <div class="card-content">';
+         
+          text = text + '    </div>';
+          text = text + '    <div class="card-action">';
+          text = text + '     <a href="'+link[c]+'">click to learn more!</a>';
+          text = text + '    </div>';
+          text = text + '   </div>';
+          text = text + '  </div>';
+          text = text + ' </div>';
+          text = text + '</div>';  
+      
+        }
+
+        document.getElementById("demo").innerHTML = text;
+</script>
+
+
+
+
+<div class="row"  id="demo2">
+    </div>
+      <div class="row">
+        <div class="col s12"></div>
+        <div class="col s6"></div>
+        <div class="col s6"></div>
+      </div>
+       
+      <div class="row">
+        <div class="col s12"></div>
+        <div class="col s6"></div>
+        <div class="col s6"></div>
+      </div>
+<script>
+	title=['Emma Galler-Green','Ben Geller','Carol Willick','Emily Waltham','Richard Burke','Gunther']
+	photos=["https://blogger.googleusercontent.com/img/a/AVvXsEjk8sdnSuBzK1OA_SJ31g73cNM1XeY7NKgn9XoS_O_w70DUj1pV2_1lraTFooEYp4JzKYF_OGVmRTOA63vOhgkwo-ymXbrJtoiRU12p_9K0vj2wZWMw0Dap9aA4svgZ9GyYITq8pFAx6pb3yZm-KHLfJgalEYbZGJ5Rm5_NKOHotYl6KTG-AGaOvyTX6Q=s320",
+			"https://blogger.googleusercontent.com/img/a/AVvXsEgYW31xAbMVNVEqThY7a9-Up7rLgcEbZOWS1hGurAg797T-hjNFi48JZXWO3_LyWtqNTCbOzGgydaTnUxApX-BSISyorCEwT896ddhKlY-QvBIqiWh7DXPFrqY5V79wMPBqcY3FN-5bBVZibFicsRLtrY6BUVZjdXpeX3NFhdk2yGfGO1GYLZwGqGToBg=s320",
+			"https://blogger.googleusercontent.com/img/a/AVvXsEjJxigAv6wlskdp5JPdOnkdne-vUwb9rp38MiYVHKo4HLRKlYRfegcoQj_G4tXrWVwjPvwuxbnZdKNztyug2JFYLYg0a7OiGDrhe-u09G1KIyj9MvV4PEIOk_4ZR67pJuy4TlvJ3cCaFeyI-V2Xb1gN9XM8XvbId39HOJxf4By7tfXsalq6yoI1P52t-Q=s320",
+			"https://blogger.googleusercontent.com/img/a/AVvXsEigBV7996aTcZLw6APksKtXFSnZj0QP3ebLds7cfkl9e49oAF0t9LJ8eejrBDD62OYVm61VnWaHFOw4ir8TuvvLs86nJnsTnAdiY0TWS5r9bq7uNdqvpmJR9UwfVy8FKOzXMb8zHuYlPXY_PZH0pSM_mqnWMDmoUmrf69_PfyguL2nAWsgVeqPY6E42WA=s320",
+			"https://blogger.googleusercontent.com/img/a/AVvXsEjU6j2Qrs75llMAaRVK8utmVcKFavCeuKr9PAPxfxHckorCaDDCRP0CLFL5LqtPSND8hQNxQ6HrUbGxdYLVodMAmfqfZ65AuviWdDWxepnGFZWDbtDsy8Wtbqh-hmddNt9Pzfw0Tha4O3D8Y0NGUVkOISC2ys_rzi2C0rSZd6A8SHLhlUQRhIQoq7KRJg=s320",
+			"https://blogger.googleusercontent.com/img/a/AVvXsEgqRtoawLVakVub6nxS__DxfMzpCb8_3pcIrlOsR0ZYgLez66VX6JiMWmEjLxKuYCBunp0Muyv-4W7tM9P2dTihWoB7QxGG_cPBEbJTJzLhbyLbg8ewfLqNicWT1d6FEciOltrx9aZxwfxDKUKY0rz1ullup_cqkVnGeZSxpcQTdaFMVsfuPwIddI_Mag=s320"]
+	//要先取得網址裡的參數
+		//var x = decodeURIComponent(GetUrlVar('id'));
+		//var i = Number(x);
+		//document.getElementById("demo2").innerHTML = "<img src ='" + photos[i] + "'width='100%'>";	
+		
+		
+		var text = "";
+        for (d=e=f=0;
+             d < photos.length ;
+             d++ ,e++ ,f++ )
+           
+       {
+          text = text + '<div class="col s12 m4 l2">';
+         text = text + ' <div class="card">';
+          text = text + '  <div class="card-image">';
+        text = text + '    <img src="' + photos[d] + '">';
+          text = text + '     <span class="card-title"> "'+title[e]+'"</span>';
+          text = text + '  </div>';
+          text = text + '  <div class="card-content">';
+         
+          text = text + '    </div>';
+          text = text + '    <div class="card-action">';
+          text = text + '     <a href="grandchild_page.html?id='+(d)+'" target=_blank>'+"click to learn more!"+'</a>';
+          text = text + '    </div>';
+          text = text + '   </div>';
+          text = text + '  </div>';
+          text = text + ' </div>';
+          text = text + '</div>';  
+      
+        }
+
+        document.getElementById("demo2").innerHTML = text;
+
+</script>
+	  
+	
+	  
+	  <h2 class="header center">Monica的公寓</h2>
+	  <div class="row center">
+	  <iframe  width="50%" height="300" src="https://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=40.732501848161675,%20-74.00533113179296&z=16&t=q&output=embed" style="border:none id="cframe" frameborder=0;></iframe>
+     <br><br><br>
+	 
+	 <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Reunion after 27 years but things didn't change.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="friends7.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+	 
+	 
+	 
+	 
+	 <h2 class="header center">最新集數 Friends: The Reunion </h2>
+	 <div class="row center">
+     <iframe width="50%" height="315" src="https://www.youtube.com/embed/nnn02NDIEiE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+     
+    
+
+      
+	
+ 
+   
+    <br><br><br> <br><br><br>
+      <footer class="container-fluid navbar-fixed-bottom" >
+		<footer class="page-footer deep-purple lighten-3">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Desingned by Ambery Liang </h5>
+			    
+               
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Resources</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://friends.fandom.com/wiki/Category:Friends_Characters">Friends' Characters</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://screenrant.com/friends-best-series-characters-ranked/">Best characters ranked</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://youtu.be/NiC1WU2b2mU">The Reunion</a></li>
+                  <li><a class="grey-text text-lighten-3" href="api.html">痞客幫API</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2022 Copyright Text
+            
+            </div>
+          </div>
+        </footer>
+		</footer>
+       
+        
+
+
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+	  <!--  Scripts-->
+	  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	  <script src="js/materialize.js"></script>
+	  <script src="js/init.js"></script>
+
+    </body>
+  </html>
+        

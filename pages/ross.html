@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<center><h1>Ross Geller</h1></center>
+<center><h2>古生物學家、Monica的哥哥</h2></center>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYWFRgWFhYZGBgaHBwcHBwcHBoaGhoaGhwaGhgaGhocIS4lIR4rIRgaJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHzQsIys0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NP/AABEIAL8BCAMBIgACEQEDEQH/xAAbAAACAgMBAAAAAAAAAAAAAAAEBQMGAAECB//EAD4QAAIBAgQDBQYDBwMFAQEAAAECAAMRBBIhMQVBUSJhcYGRBhMyQqGxUsHRFBUjYnLh8ENTgjOSorLxwhb/xAAZAQADAQEBAAAAAAAAAAAAAAABAgMABAX/xAApEQACAgICAQQBBQADAAAAAAAAAQIRAyESMUEEIlFhkRMycYGhFFKx/9oADAMBAAIRAxEAPwCufuvD/imjwih+O3nJwmH6n1nDphubGc1P7OtNfRvD4SmgOV9/OHYSgA4KMCeQ3vAKdHDHRWjHB4ZAwyOb8ojKRv6MxOHBqlnIDaabbS5YZ6bJogVgByGspmMpJ729R+3pp9pd8LiQyAFLEAWPUQIZoC4qg90+g+E8p5KlGxBz6X2nr3Eh/Cf+kzyzD4OmwzX1uQfGOickaxeGZhmV7abSBUqFMmRDpoTa8KfCoNFu3dy1tbXznNXD0kdc9Rr2vkAAA/lubaysbirIy9zLD7CuaAdXC668pYeMZWCslgb90ob46nTazU6gXcMTbl/MCrLqNreMa4bj9JwSEcZbFiCrWvzAB/y0rGXtpmWtDJaym4KgMO6VPjb6Db45ZziKeju4ysdH0FtBoynX5hr3xDxfDK6Zla/b+8SXYX0R4qp2V0H+CB+8jutw4ZF15CDU+Hjn3wqIjF+FbtP4QtD2PKF4bBLmf+kQ3C4BcnlAlsNaKax0YS1ez6D3Y0ivEYNQH02vG/s+P4c1e5Bj0ySpkG4+k4VKZ5SWrQvqJD+yNOeV8mdMVGuzdYIALrpyg7OhPwiE1MOxUD1gpwh11E2wVEhxTIvKLWCH5YdjMOeREDWjbciFWI+PyDs6W+GDYlly7Qx8MOsExVKwOsdWJLiJDNTZmpdEGS4b4l8YbxkLnGUg6a2kGETss3ITusi8juIj/dYjewelXsLWvMkRFpkakbij0PPQ6fecmphx8sk/baf+2fSYeIU+VI+k5/6/07f7X4OaD0DewtC8OKbEAGx8ZDhsYjtb3eXvIh6mncCw8bRGUj0DYtKaVLP2n67y9cPqP7sKy6WFm7tJScTiaaPlVc/eJdeHCoEF9UIHiNoEOccQH8N/6TPJ8RWREBK7sxPImxsLGercWqZKTseSmeQcbrB8tlsBcAE7jf739JSCtkMjoyhxRQGqkWbZUFyLn5iT3RbiOJOxzFvI6873EhxFYkBQAAOQ+5O95ElMnS15el5IW+kFNjGIIJJB1IvbXr0vN4PGPTJKNYWN9hcHS0iOEcbKZ03Dqm+Un7we0yUuwtMeVuGQa3DKxtq1tbEXsLbG+8a8FxastRAht8e97W6X8OVpW2wtS1yrWHMg/nGvA2KOHtowYHmNjoenLebRlaey0VuILkXTpF/7wPIdZLjMNYdk3GljAVofnCmzPsKw2ObM3esOw2PbINIsw9DtHX5YdhqHZEVfuCroUYnFsS4lh9nv+nEGIw4DPMwPtCtNcovM37kwx8ltfDjvnPuB1Mq7e1fjIz7VHoY3Jf8AUNfZamoiQNRHfKq/tM55GQP7QuYOX0al8lixVNYE1MSvVeLu3OQnHP1mpvwJosLoIHiQtjE5xbdZE9VjuZlFiujlt5xOpzHQrGGCxAVGVl0bY9+01VwpAv6SCliSBbQjvjOnjA6hStso9ZOVp2gJWxTWW0yEYymNLCZHT0M07L9+8D/tfSc/vJ+VL6TBWrn5BNmriPwCc2vo6rfy/wAHeHxzM1mp5R1tGPvafT6RdQqVr9tBbukiVql9U08YrKxejvFYnK4FNMy9bbGXXhSP7sMGupGo6GUnE1ahcZEyrzv1lw4NTGS4fW3aXvgQbIfaMj9ne4uLa/rPGcdUzFyDpewH8u2k9v4xh89GonVT68p4dxKwe21r38ZaBDL4LH7G+zKVxnqfAN+/ulxfhmHTREVemkW+wwPuttJZnwx32+/qZzZpy5NHd6fHDgnWxUmAQm+W/wDxMLoYNBsg8x+UkLAEjMT5j8pyMSgNmIXxM5+TZ1KEEQ8SwoZGBUW39J5vxAfs9V0UaPbTp1nqb4hLWzpc98849tsJlrq+6vz7xynTgk+VM5PVwTjyQej3oI5I108LHQekB96PqZmEuaNhc6//ACRphnPLmZ2pHmtk+GrDP/xMPw1YZBAMNg3zjT5TGGEwTkDSDj7gpuhRjKvbeVt11MteO4c2dvCVeqtmI74WqBHsiKzm07M5MA1GWnDSQyNoUZnFpky80TCTbSNzUy8yYFmTmbmoRWYIzSidCAbRZLJwbEBlyncRJ6Q+NWwbEYYsNBbSbhPEHyk2MyTTaK0izLh8T+ITo4XE/jE6/dtX/emDhbn/AFz6iSsvX0/ycDCYjm4hOHo1hqWBkI4ay/69/OEJhW/3YGFI3iaFV2BzBBzAlq4Rkyjk4HrKnicCSwL1SD0vaWzgzpkClbkDRusCGYXiR2G8DPDOO07Vm7zceB/vee64n4G8DKLxHBirh6ufK2QdgmwZNAbKeeo27zGU+LVg/SeROvATXqHDYdEpCzFR2ugtqZT8c1chmNRzYXOttDtoOZvsdZ6PSw61aSX/AAj0tEHF+EBrqFGU6kHr105ycZxUnZaeOXFUV7gOPa47R8ze/wDmkbe0tF8iG181/DzjXgfAUUrnt2dQB3bXlhrU0IAYabW6RJSXK0Ux45ODTPKv2J6bIj5nLi4RSdNefLqd474nwwtgm3upDqDutviF/AmWdOGIr3LMRy10851xlQ6MikDMpXu1FozzbVCx9O1F8hJhMEtGktPUsq5mf5SWOwHdcawP3yi+o+Iw/jdS1NB8xFj4JYE+ZtKqwN/+U6sM5ONyOT1cYwnxj8K/5HWFxK5xryMZYbFIFBvKphlOZfOMcMCVHjKX7jnT0TcTxiZz4Sk4g3Ynvlk4jSOfylbqjtHxhkzR7IzObTozUUcwyJjJH2kRjISRyZzNtNRkSkzBNmaE3MZdGpqbmpgM3CMHXKMCJCqEmwk9Kgcwvy3gk1Wxoxk9pBPEapNjNybE0wy6TUnGUaKuEy6/u6nzrH/umfu2j/vH/uM2MPg/xfWaCYMTnOmvpGJgsOP9S/8AynSYXDX/AOpr/VNXwnyj6SSmuFPy/SYySMxFGhmBd7nlrLhwWt2AoW627J6Sp1WwykWQt4CW3gzNkGUdkjbpMhgvEfCfAyk8GKvnTf3dTOyn5lJsRr3j6y6YqvTQqlR8pfQKBmbXu5DxgmG9nqNPM9IM7tszMMpzG5uAoAXTvMMsblFjYpOMk/HkWq+QWXS2gHQDlBark6nlOsUHRiHChrnRTcb6WNukgrVhacrizrUlVBXBqxLsotfKSSegIH5xpUrI2YZheVzDYAOpZiwzD5SVNu4jwgVDCsKtndmFiNyCRtqRzhUW0ZZePgsFOtmuDuDY/rIqzD+81XdRYgWtp5TWCdWqoHF0v2geYtsfGLGHuDPIuIH7Q5S6BbEBB9SdPoJXmWxP9U9Rqez+CftWYdytp6G8rnE+AYJicleohJ3YB0v5WP3npRioxStHl5VKcnKipUSMy+Jh+GtlHiZrG+zOJpWcpnp3JDoc6W6m2o8wINhQbW7zDx2SWtHPE2GYeEVDA0Sbl9T3w7ilJsw0MrOIWzHxhkgLbGzYPDj5poUcMOcSmai0Gh1V/ZgNIG1Wj0gDiRkQ0BonxDIdgYIQO+dETkiMhHE6osAbkXndSsCLBbSK01CLRhnM6mrQmYRhKuUwtcUL25TnA8Fr1v8Ap02YdbWHqYyHsVjLX919RJS43tnRjnkjGkgGnjBrMjKl7GYkmxCjxb+0yI1D5K88nwXEPSH+l9JIKicqX0jscBqdUE7X2ff8a+kjxZW4iBqq/wC3aTYcs5CrRzE8gLmWCj7NZviqWXnYanuEcUjSoKVUBF5k7nxJ3lIwpXJ0jd9IU4H2eawasVQfhXtN5nYeV46Q06S9gBQBqTv6mKMdxq91QXHU/lK9xPiLZSL+kLyxWor+/JlFeRRxTiBfFhgb9sW9bCXv9rbKBew/znPLsMb106Zrnyl7wOKvoeX2kpWlSDF22DcQu+c/hew7xkQn7xG9TRtZYFN3qoN2UOneV7LDzBErGLqgNbkd4ZY+KTXTQefa+CNuJYjJ/Dp5raX3sANezBKfF8Y4CqFDciFufA9IUhfanbuG0motimYIwVB+ItceVt4vXhDRcWttokprXyj3zqW6KNvE8zGuDS4duaqGHky3+l4E9AoDmYMevLyjHCnLhnc/NlUebBf/ANfSUwQ5y+kmxcslFaDkqEagxNxuuEA0tdtbDTy6Rnm2tFXFQGuh2bn0PIyS7C+h77K8dZBlN8p79vKWdsPhaxuyJnOuZbKx7zl3855nwwsmh5aR/TqXsZaOZw14E/TjJb7DeP8AsqWGbDkPbdDYN/xOx8NPOeTcR4a4qOChBB1BFiPEGesU+IurXBv4wjiFOjjVyVBkqgdmoBcg8gTzXuPlLLNGenpkp4Wto8Vbhr9BMXhbnpHXH+H4vCke+TKrMwRhYo+U8iDpcagGxtEh4i/WZprshslPCH6iRNws/iE4bHOfmkD4l/xGDZmmTHh380gbC9rLeRGq3UyPMb7x0mKww4RR80iq0FA3kJJ6zgzUxWalt9lPZz3hFSoOx8q/i8e6VrBUc7qvVgP1nrvDyqBUAsFAiZJNLRXBBOVsd4OmEWwAFtOgAizH45gxUajukmIxvZN4qfFC+pCzkjC3yZ25MtLihhgEJOYjTvmQU8YRRYevKZG4XsVZYrVjs8TxB2pj6wvAPiHa7hUTntmNuSibOKWCV65vmG22nSNfHYkFbDeIcQI0TcaX5Dw6mI67km7Ek9TIK2JKPlY9ltQehnFeppeTbb2y1nVR4l4g17w53gOLhSA2KcH8RPl+csVOoRZpWQ2V7d9/WO6dTsAc7mMyaYbUxeV1qD5T9NmHpeCe1HDSf4lPnqQPuP0gzMRGfDcVnQ023TQHqvL9J3elUckXil/K/khncotSX9lOo8SdNtR9p0nG3J0veNuKcGDZmHZI1J2Fv5uUrVKg5YBRmubXUMfO1tpLJgcXTQI5k12WjhtR6zWY9L25Sw8WcLTRBzZbD+VLn729ZB7P4RVQFGVhzI115g8wZBxKqWxBXlTAUf1MAzH6qPKdrxR9P6Zvy9E45HlyJeEG0ntp3aRdijmB7pNiGsB1+sEFTcN69Z4yR6DZiVhlF99B4/3h2GrnSJMQdPMQ+g+0LQFLY+BvNl8oLdBf0glGpI8bUJyp+I6+A1P1tFoe9HXtEXxGBdG1amoqDrdD2v8AxLTyoieyYJgGudR8JHVToR6TynjWC9zXqUxqFchf6d188pE6cUrVMhmj0wEyNhJiNJPhOHVKhsik9/L1jtpdkab0heROANZfML7BM63znN4Cwlf9ofZuphGGezK2zDa/QzRyRbpM2TFKKtoSTlp2ROWjokx/7H4YNVLnZB9TLrh8WoW4NyTKTwIWRjtmNpaadMZQB0kcisMJuOkQcY4qfhGgiinXJbf1kXEmu5tCcBw5yMx0BmbUYie+czrFVrKQo5amZCMVhkRObeMyT5lZYpWbLVTvVaW7gVU+4AY3IuLnfeVUKZY+AITTIIt2jY+QvNLo64pJ6OuJ0QykekV0cUSCp3XQ9/QxpiqnLYiIMY2Vs48D3iIgy1smqVjeQviADYzTODqIDjDrGoRs3jk+ZfETvB4lh2ra21HSD0cR8p16SSmLNfkfrML5sZZ8wkNLEe7cPrbZra9nnp9Zpbjbacs246i0bHNwkpLwaceUaYHxHjtR6qZgUo5gMg0JH4mI3PO20tCrSUEqwGVSbN0Hf/8AZRXwl6gVmOpIHdfS4liquGzIbB7AEEi571/EDyI89Z3vLy3JXf5OJRav6EoxdZKxxFNsrE5mXZWW/wAJGx0ljwDl7u2hdi3hc3t+UU1EG1via3fYcjHGHIUCQ9S6Sjeuy3p1bcgmuLmcL3i4mPWvIGqFTrqDz6eM4zsbIMXh+a6gbjmJNhhoJHiXsNOekkw50ELF8jFJDQbNUY8lAUeO5+/0kNfFhFuf/t5Bha5HZXVjqT3nUmLQ9j8Pl056k/54wSt7CtiKjVnOVXCkajYIq/lOqCW0JuTqY6/amsoubZRz7oYuiuPF+o6F9D2Bw6Htup+sfYPCYSgLKt4uNWdp2oeUfP8Ap0r0iS2/xob/AL1RfhpgSPEfs+JQpWQa8+nhFNSoi6M6jzm2FteXUbTLI71/4b/j4pKl3/J557YexdTCsXQZ6JOjDXL3GU9p7/huIWBVwGU6EHUWlH9qPYOzCvhu1SJu6fMmutuqy8ZpnmZ/Szxv6K7wyixVFVST4S2rw5iLuMot5yfhiKGULawHSMce4yk90555G3SNiwRUXJlQWmisbLc9TrG9DC3teBFNbgQt8Xa19O+LJtj4IpWwbi9ADYd8yB8axt9FG25mRoxdEsj9xbf3xh12yeSyWpilcIV+EqSpHUEg/YSjx7wdyUIJ0VtPMajw2lJbiUjpnXEXv3MP89IhrYrk2h+hjfHsb7a9Ofl1ERV6yHsvoYqBIjStkNr6Hbu7puu14JWoEbHOvjqJzhK5+Ftx1jUT5Hbmx7xHHBMrnK3iP0iWs2s6wmIyOG75qMnTLw+FVly2A6HaJnwtiRaOMNXDAEc53isOHF+fWSWmdDSkrKliMiOrupYajTqRofy85JXwIrULUxZhUFrWFlCsXseVrjzYTr2gwxyWtuID7OY1lO+rDLt8I3IUd5Aue4TqxybVHJOKUtjjiXaemTYEoM4H4lsPW1vSTKZBjD/Gy3vkRQf6jdz/AOwHlJlETM3y2UxdEgEwnSYkg4lW93TZuewHVjoskVb8gzVMzkcl08+f6eUmasFEXYHQD79SdzBuJ4sBGG5PZ9d/peNxt0JypWYuIao+bkPhHID8R743wdbL2U7TczyEQ4QMQAewvcLk+kc4d8oAUZR+Jzb0E0kCLH2FJHex/wAvHtPCs1JWHK49DK3hcSLWW5vu3X1l49nmBpBDue1bubb9fOTUbdWdWLI4S5ISE2nVOtbvBjHiXCmW7DaKdjYmLu6kj14ThkjaF/EeDZjnpag7rzHh3Q3g+EqoMrsuT8N7keEnpHpOjBTemQXpkpckzKii+m0IwWMambg6cxBi05MbovKClHjINxvDlYmvQGvzKP8A2UflKvxbHC1r7yxYHEMjXF++Re0fABiENWgAtQasuwbwHWGNSf2eVnxPFaXRScLiGY5dlvCMYuxi/AK6uUcEEXuDuIfjCQt+Q1gkvdoljri2IsVULtbqbTINVxOodR82g6zJfizkeSI9ll4NTtRFx8RYn6KPtKzLRwo/wk8/uYJftOiPYHxHCNy7S9DyiDE0jscwHQ2Yf+Qv9ZbMVUI3X0iyrVB0C6xIsEkmVo0CNsvoUP6QLEUXVlcg5TpuD9pcKeBVjdxfuiP2lwIRcyCw2I13jxluico+2xbWeaMiLXA8JIh0jCDzgvESBkO4jxOIyjpWysDH9KrcAxHHyVjPwMMWPeAqfLxlY4Q4pVmLWJViAD15SxUqukrnFBkxGYfMFYAbk6iw79JTC6YmZWkxqlS9R2OpLG/0H5RjTifAEnfckk+scUliTdsaHRKglc45ic9VUHwpqf6v7D7yw4mpkQt0H15CVFFOck6k3J8TBD5DN6oORyEYjkpP0iXDguw1sOpNhHYFkf8ApIgHC1GUZlv+kdaTZJ7aQ0wiKbAuPX9I1o4FBrp6XP1kGGoKQCqAGM6NDrJtl4o6pb2Vbnqx28oauMakyFTqRqetiZGlO3cJlSiHAt8QBt3i8S15Hp+C78Lx4qqAxF+Y6wDjHCrdpRpKpgsS1Nr3Ityl44XxJKy5SdbSjSmuL78MpiyuEuUf7RW6aHbnDKPD3blHyYOmvaa3nIcTxukmi6+EWOFpe6SX+s6Z+tb/AGoGpcCPPSGU+EINzEeJ9qGPw2ER43j9QnVjYxlHH8N/yc0vUTfb/Be/cUU3I8zNLxDDpsyjwnnH7azDcmRZ3J5xk1H9qSIvI33bLN7RUcPWYOpC1Ou1/GVDGOULq1mBHZ6Qs5rakCD11QqwZhm3ERtN2xXyfSKuHDOl1yjNr0mSfDv29QGA1t4TIzkSWL7PRE9jVHx1PrJHwKUbIrZlIPPY3lMfGVW3qOfOH8GcksCxJ0Nyb2jSprRSLdjiuzrpuIIQDytCfeMNN5EUJ5SJQ3TSD8Qw6le2Ljf06QsuFHfBat21MwSgMxzMO8wlRpJeO0MlXNbRhfzG8F9/LdnK1TaOW3jLh9a3ZPlFqnWS5stm6fabsyfkfZov438VNhvZl+xH5yelVuLwTjNawQjcfnpBH9w0txZNhGsBHeGe4iCmdoacVkQseQ9TsIGrYYukb4hxVRUCbgDteJ5en3kWJooLMGFj1sPvEPvGJLXNzqZhfzjcROVheOxYClVNydO4X0hfDhoAfCJqS5n121lh4RSLm3zLuOo6iaVJGjbkPcGgA0hwMGpaQhGkWdKOnN94Bj8RldNbWU/UmHFoBjlpMbFgHAB1OtiTaK1orjq+w2jUWoOjfeT4bEe7a9zcROqsli1wL6EfrGy4lSoJ3HTnFjKtMeeLzHsmxnFWcghiRsRAGDE93fB8dxVE2ABiTE8Ud7hbgHpKKXwiLxO/cx4+RPicCCVOJ0V2GaI2w7n4jbxMgqGkvxPc9F1MK5SFfCPYzfjm+VQINUx9V+tvQRPV4lr2FAHeLkyCvjKr6Em3QbSiwvySl6hLpDo1XPPN4G805bc9nqTtEuHwtY/CreVxG2H4LVcdrP8AcTPEl5As0mugehiVBYFgb8xymRo/s4gXdkbqQbGZD7RLyfCJbxlwU9sjqP0ioVR1+8P4TiFVwSeR5GZrRVNFh9wzbQbE4haWjPmb8IgHEONMxyI2UczreQ4fDIpBdizHW2v1MnQeXwFU6jObnyEnzdfTeCvi11UaDna84LpoSTvpa9yfHlBQbE3tBTLdvWw0tbQD/D9YhzS38ba6ZbjcX30HQRLQw6X119ZSL0RktgVG5kz7WheORAAV0HnF71RG7Fegnhlc2KnddvDlOOJtcQJa2Vweuh85LiXBBhrdg5aoZ0zoILxOvsnTU/lJaFQWueQvFNZrksTqTcwRVsLlo2XnSLeRIYZh05mFoVBGHoWynmSR9I14azo5GXUbX0PeAfyMjNNctM31zXO/Mf2Ed0cSjCznXkbE+slJloI7THofiGQ/zC312MMSncaEGCH3YOU7HxIPkROf2anujMh/lv8AY6RSvQY6kbyme0uHLViegUD0v+cf4jiT0v8AqEVKZ0zAZWHiOclxL0WsSbgqCDY3t36dxjRtbQsqloqeF4zXpLlJzL0a+ngYTT42rGxpsDtZCTfyjs4KgRp9j+knwQp0TcWLdbGGXF9oMecemAYfA5rEUKpP89h/eSvwXGv8FJUX1+pluwntFTVQAozndiCfyjGnxWnU0aqb2v8ACwX0AlceGL87He+2ebf/AMZiHP8AEqa9NTJU9iFHx1D6Wl7xfFqA2dj4KR+UXtjqbHmfG/6QzXHVirFARUPZTDgi+Zh6RxQ4TRT4Ka+JsTGFBVYXFref6TAwHzL6N+kVKVWNwigY4FTsQO4CcmkF2ky63s1+u4kTPyuNPH9IjcvgOkcF76WvMmNVQW7foD+kyLcwaP/Z" style="width:100%">
+  <
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="https://i.insider.com/5d0112eddaa48213e560623d?width=1136&format=jpeg" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+ <img src="https://static0.srcdn.com/wordpress/wp-content/uploads/2019/06/Friends-Ross-Rachel-Sonogram.jpg?q=50&fit=crop&w=963&h=481&dpr=1.5" style="width:100%">
+  
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2500); // Change image every 2 seconds
+}
+</script>
+<center><h3>人物背景</h3></center>
+<center><p>羅斯是莫尼卡的哥哥；和莫尼卡一樣是猶太裔（給他兒子本講解猶太節日光明節的故事）， 在蓋勒家也一直受到父母的偏愛<br></center></p>
+<center><p>在第一季開始之前和大學同學Carol是夫妻，<br>
+但後來Carol發現自己是個女同性戀，因而離婚。<br>
+兩人有一個兒子Ben。<br>
+<div style="text-align:center"> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2fch6wJNuxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<center><h3>個性</h3></center>
+<center><p>典型的的書呆子。<br>
+在劇中擁有最高的學位<br>
+雖然一方面睿智、知書達禮、貼心、善良，另一方面卻彆扭、社交不能而且死要面子，很在乎自己的形象並且有「學者的傲慢」。<br>
+中後期開始由於受到一連串失敗婚姻的打擊，羅斯偶爾會有情緒控管的問題，常常會輕易地被小事情刺激而暴怒。<br>
+羅斯同時也是個控制狂 也因此常常對女人疑神疑鬼，並缺乏安全感，並容易感到忌妒，<br>
+但卻也是劇劇中感情線最豐富的角色<br></center></p>
+<div style="text-align:center"> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rA7CnQwKxbQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<center><p>和Richel有著分分合合的感情，兩人有一個女兒Emma。</center></p>
+<div style="text-align:center"> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ej95GnS2aVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<center><p>後來羅斯在老友菲比的介紹下和菲比的朋友邦妮有了第三段段情，<br>
+在期間受到忌妒的瑞秋各種破壞(甚至說服邦妮重新理髮成大光頭)但是這段感情後來無疾而終，<br>
+取而代之的是羅斯和瑞秋短期的復合，但又因為兩人對「Take a Break」的定義有所爭執而迅速地分手。<br></center></p>
+<div style="text-align:center"> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6OHTvBhwHdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html> 
